@@ -21,7 +21,8 @@ function App() {
           <div className="flex gap-8">
             <a href="#about" className="hover:text-purple-300 transition-colors">About</a>
             <a href="#studio" className="hover:text-purple-300 transition-colors">Studio</a>
-            <a href="#characters" className="hover:text-purple-300 transition-colors">Characters</a>
+            <a href="#characters" className="hover:text-purple-300 transition-colors">Runners</a>
+            <a href="#crews" className="hover:text-purple-200 transition-colors">Crews</a>
             <a href="#worlds" className="hover:text-purple-300 transition-colors">Worlds</a>
           </div>
         </nav>
@@ -49,7 +50,7 @@ function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?auto=format&fit=crop&q=80&w=2070"
+                src="src/playstore-icon.png"
                 alt="Gameplay Screenshot"
                 className="rounded-lg shadow-2xl"
               />
@@ -162,8 +163,36 @@ function App() {
         </div>
       </section>
 
+      {/* Characters Section */}
+      <section id="crews" className="py-20 px-4 bg-black/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold mb-12 text-center">Crews</h2>
+           {[
+            {
+              name: "Crew Interface",
+              image: "/src/crew-gui.png",
+              description: "Graphial user-interface for players that are a part of a crew."
+            }
+           ].map((crew) => (
+            <div key={crew.name} className="relative rounded-lg overflow-hidden group">
+            <img 
+              src={crew.image}
+              alt={crew.name}
+              className="w-full h-90 object-cover transition-transform group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+              <h3 className="text-2xl font-bold mb-2">{crew.name}</h3>
+              <p className="text-gray-300">{crew.description}</p>
+            </div>
+          </div>
+           )
+           )} 
+        </div>
+
+      </section>
+
       {/* Worlds Section */}
-      <section id="worlds" className="py-20 px-4 bg-black/30">
+      <section id="worlds" className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Parkour Worlds</h2>
           <div className="grid md:grid-cols-2 gap-8">
@@ -171,12 +200,22 @@ function App() {
               {
                 name: "Crystal Valley",
                 description: "A mystical realm where ancient crystals power advanced technology",
-                image: "https://images.unsplash.com/photo-1518674660708-0e2c0473e68e?auto=format&fit=crop&q=80&w=2070"
+                image: "src/crystal-valley.png"
               },
               {
                 name: "Neon City",
                 description: "A cyberpunk metropolis where magic meets machinery",
-                image: "https://images.unsplash.com/photo-1480044965905-02098d419e96?auto=format&fit=crop&q=80&w=2070"
+                image: "src/neon-city.png"
+              },
+              {
+                name: "Cyber Ruins",
+                description: "The ruins of a once thriving cyber kingdom",
+                image: "src/cyber-ruins.png"
+              },
+              {
+                name: "Aquatic Tanker",
+                description: "How long can you hold your breathe to search for treasure!",
+                image: "src/aquatic-tanker.png"
               }
             ].map((world) => (
               <div key={world.name} className="relative rounded-lg overflow-hidden group">
