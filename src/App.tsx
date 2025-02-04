@@ -1,4 +1,5 @@
 import React from 'react';
+import Crews from './crews.tsx'
 import { Gamepad2, Users, Palette, Building2, ChevronDown, Github, Twitter } from 'lucide-react';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <a href="#about" className="hover:text-purple-300 transition-colors">About</a>
             <a href="#studio" className="hover:text-purple-300 transition-colors">Studio</a>
             <a href="#characters" className="hover:text-purple-300 transition-colors">Runners</a>
-            <a href="#crews" className="hover:text-purple-200 transition-colors">Crews</a>
+            <a href="Crews" className="hover:text-purple-200 transition-colors">Crews</a>
             <a href="#worlds" className="hover:text-purple-300 transition-colors">Worlds</a>
           </div>
         </nav>
